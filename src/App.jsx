@@ -20,11 +20,11 @@ function App() {
 			text: inputValue,
 			done: false,
 		};
+    setInputValue("");
 		setTodos([...todos, newTodo]);
 	};
 
 	const OnDone = (e) => {
-		// console.log(e.target.name);
 		const key = e.target.name;
 		const nowTodos = [...todos];
 		nowTodos.map((todo) => {
@@ -51,7 +51,7 @@ function App() {
 				<h1>Todoアプリ</h1>
 			</div>
 			<div>
-				<input onChange={GetInputValue}></input>
+				<input onChange={GetInputValue} value={inputValue}></input>
 				<button onClick={AddTodos}>登録</button>
 			</div>
 			<div>
